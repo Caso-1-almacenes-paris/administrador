@@ -1,0 +1,27 @@
+server:
+  port: 8084 # 🔌 Puerto único para el Administrador
+
+spring:
+  application:
+    name: servicio-administrador
+
+  datasource:
+    url: jdbc:postgresql://ep-dark-flower-acxgvu5x-pooler.sa-east-1.aws.neon.tech/administrador_db?sslmode=require
+    username: neondb_owner
+    password: npg_8DrnxkMa1gcj
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.value}
