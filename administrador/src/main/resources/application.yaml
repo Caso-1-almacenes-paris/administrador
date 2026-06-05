@@ -1,12 +1,12 @@
 server:
-  port: 8084 # 🔌 Puerto único para el Administrador
+  port: 8084 
 
 spring:
   application:
     name: servicio-administrador
 
   datasource:
-    url: jdbc:postgresql://ep-dark-flower-acxgvu5x-pooler.sa-east-1.aws.neon.tech/administrador_db?sslmode=require
+    url: jdbc:postgresql://ep-dark-flower-acxgvu5x-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require
     username: neondb_owner
     password: npg_8DrnxkMa1gcj
     driver-class-name: org.postgresql.Driver
@@ -15,6 +15,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 eureka:
   client:
