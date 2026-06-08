@@ -21,7 +21,7 @@ import cl.paris.administrador.service.AdministradorService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/administradores")
+@RequestMapping("/api/v1/administradores")
 public class AdministradorController {
 
     @Autowired
